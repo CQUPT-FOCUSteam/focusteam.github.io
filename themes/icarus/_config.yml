@@ -79,12 +79,8 @@ search:
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment
 comment:
     # Name of the comment plugin
-    type: gitalk
-    owner: CQUPT-FOCUSteam
-    repo: FOCUSteam-blog-comments
-    client_id: 15bfe72876e7c4670ce2
-    client_secret: 1ef8a82eed8fc40d032b131a17f1f46cc0902617
-    admin: CQUPT-FOCUSteam
+    type: isso
+    url: 114.55.93.133:21006/comments
 # Donation entries
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Donation/
 donate:
