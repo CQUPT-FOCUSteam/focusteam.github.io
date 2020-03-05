@@ -3,8 +3,15 @@
     You forgot to set the <code>url</code> for Isso. Please set it in <code>_config.yml</code>.
 </div>
 <% } else { %>
-<div id="isso-thread"></div>
-<script data-isso="//<%= get_config('comment.url') %>" src="//<%= get_config('comment.url') %>/js/embed.min.js">
+<%- _css('css/isso') %>
+<script data-isso="//<%= get_config('comment.url') %>"
+    data-isso-css="false"
+    data-isso-lang="zh"
+    data-isso-reply-to-self="true"
+    data-isso-require-author="true"
+    data-isso-reply-notifications="true"
+    src="//<%= get_config('comment.url') %>/js/embed.min.js">
 </script>
+<section id="isso-thread" data-title="<%= post.title %>"></section>
 <% } %>
 
