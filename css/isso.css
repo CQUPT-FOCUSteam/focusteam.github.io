@@ -1,78 +1,65 @@
-#isso-thread * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-#isso-thread .isso-comment-header a {
-    text-decoration: none;
-}
-
-#isso-thread {
-    padding: 0;
-    margin: 10px;
-}
-#isso-thread > h4 {
-    color: #555;
+#isso-thread h4 {
+    margin: 1em 0;
     font-weight: bold;
-    margin: 0 0 10px 0;
-    padding-top: 3px;
+    font-size: 1.5em;
 }
-#isso-thread > .isso-feedlink {
-    float: right;
-    padding-left: 1em;
+.isso-postbox > .form-wrapper > .textarea-wrapper > .textarea {
+    width: 100%;
+    height: auto;
+    min-height: 8em;
+    overflow-y: scroll;
+    resize: none;
+    outline: none;
+    -webkit-user-modify: read-write-plaintext-only;
 }
-#isso-thread > .isso-feedlink > a {
-    font-size: 0.8em;
-    vertical-align: bottom;
+.isso-postbox > .form-wrapper > .auth-section {
+    width: 100%;
+    height: 3rem;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    margin: .6rem 0;
 }
-#isso-thread .textarea {
-    min-height: 58px;
-    outline: 0;
+.isso-postbox > .form-wrapper > .auth-section p {
+    flex: 1;
 }
-#isso-thread .textarea.placeholder {
-    color: #757575;
+.isso-postbox > .form-wrapper > .auth-section > .input-wrapper {
+    margin-right: .6rem;
 }
-
+.isso-postbox > .form-wrapper > .auth-section > p > input {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: .6rem .8rem;
+    font-size: 14px;
+    border-radius: .2rem;
+    outline: none;
+}
+.isso-postbox > .form-wrapper > .auth-section > .input-wrapper  input {
+    background: #fafafa;
+    border: .1rem solid #eee;
+    cursor: text;
+}
+.isso-postbox > .form-wrapper > .auth-section > .post-action  input {
+    background: #2687fb;
+    border: .1rem solid #177ffb;
+    color: #fff;
+    cursor: pointer;
+}
+.isso-postbox > .form-wrapper > .notification-section input {
+    margin-right: .3rem;
+}
 #isso-root .isso-comment {
     max-width: 68em;
     padding-top: 0.95em;
     margin: 0.95em auto;
 }
-#isso-root .preview .isso-comment {
-    padding-top: 0;
-    margin: 0;
-}
-#isso-root .isso-comment:not(:first-of-type),
-.isso-follow-up .isso-comment {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
 .isso-comment > div.avatar {
     display: block;
     float: left;
-    width: 8%;
-    margin: 3px 10px 0 0;
-    border: 0px;
-    /* 头像旋转效果 */
-    -webkit-transition:0.4s;
-    -webkit-transition:-webkit-transform 0.4s ease-out;
-    transition:transform 0.4s ease-out;
-    -moz-transition:-moz-transform 0.4s ease-out;
+    width: 7%;
+    margin: 3px 15px 0 0;
 }
-.isso-comment > div.avatar:hover {
-    /* 头像旋转效果 - 放上鼠标之后 */
-    transform:rotateZ(360deg);
-    -webkit-transform:rotateZ(360deg);
-    -moz-transform:rotateZ(360deg);
-}
-
-/* 头像尺寸自适应屏幕 */
-@media only screen
-and (max-width : 600px) {
-    .isso-comment > div.avatar {
-        width: 10%;
-    }
-}
-
 .isso-comment > div.avatar > svg {
     max-width: 48px;
     max-height: 48px;
@@ -80,6 +67,7 @@ and (max-width : 600px) {
     border-radius: 3px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
+
 .isso-comment > div.text-wrapper {
     display: block;
 }
@@ -139,8 +127,7 @@ and (max-width : 600px) {
 .isso-comment > div.text-wrapper > div.textarea-wrapper .preview {
     width: 100%;
     border: 1px solid #f0f0f0;
-    /*border-radius: 2px;*/
-    border-radius: 5px;
+    border-radius: 2px;
     box-shadow: 0 0 2px #888;
 }
 .isso-comment > div.text-wrapper > .isso-comment-footer {
@@ -178,116 +165,4 @@ and (max-width : 600px) {
 }
 .isso-comment.isso-no-votes span.votes {
     display: none;
-}
-
-.isso-postbox {
-    max-width: 68em;
-    margin: 0 auto 0em;
-    /* margin: 0 auto 2em; */
-    clear: right;
-}
-.isso-postbox > .form-wrapper {
-    display: block;
-    padding: 0;
-}
-.isso-postbox > .form-wrapper > .auth-section,
-.isso-postbox > .form-wrapper > .auth-section .post-action {
-    display: block;
-}
-.isso-postbox > .form-wrapper .textarea,
-.isso-postbox > .form-wrapper .preview {
-    margin: 0 0 .3em;
-    padding: .4em .8em;
-    /*border-radius: 3px;*/
-    border-radius: 8px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-#isso-thread .textarea:focus,
-#isso-thread input:focus {
-    border-color: rgba(0, 0, 0, 0.8);
-}
-.isso-postbox > .form-wrapper > .auth-section .input-wrapper {
-    display: inline-block;
-    position: relative;
-    max-width: 25%;
-    margin: 0;
-    margin-right: 5px;
-}
-.isso-postbox > .form-wrapper > .auth-section .input-wrapper input {
-    padding: .3em 10px;
-    max-width: 100%;
-    border-radius: 5px;
-    background-color: #fff;
-    line-height: 1.4em;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-.isso-postbox > .form-wrapper > .auth-section .post-action {
-    display: inline-block;
-    float: right;
-    margin: 0 0 0 5px;
-    width: 13%;
-}
-.isso-postbox > .form-wrapper > .auth-section .post-action > input {
-    padding: calc(.3em);
-    /*border-radius: 2px;*/
-    border-radius: 5px;
-    border: 1px solid #CCC;
-    background-color: #DDD;
-    cursor: pointer;
-    outline: 0;
-    line-height: 1.4em;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    width: 100%;
-
-    background: #209cee;
-    text-shadow: rgba(0,0,0,.4) 0 1px 0;
-    color: #ffffff;
-    text-decoration: none;
-    vertical-align: middle;
-}
-
-.isso-postbox > .form-wrapper > .auth-section .post-action > input:hover {
-    background-color: #CCC;
-}
-.isso-postbox > .form-wrapper > .auth-section .post-action > input:active {
-    background-color: #BBB;
-}
-.isso-postbox > .form-wrapper .preview,
-.isso-postbox > .form-wrapper input[name="edit"],
-.isso-postbox.preview-mode > .form-wrapper input[name="preview"],
-.isso-postbox.preview-mode > .form-wrapper .textarea {
-    display: none;
-}
-.isso-postbox.preview-mode > .form-wrapper .preview {
-    display: block;
-}
-.isso-postbox.preview-mode > .form-wrapper input[name="edit"] {
-    display: inline;
-}
-.isso-postbox > .form-wrapper .preview {
-    background-color: #f8f8f8;
-    background: repeating-linear-gradient(
-        -45deg,
-        #f8f8f8,
-        #f8f8f8 10px,
-        #fff 10px,
-        #fff 20px
-    );
-}
-.isso-postbox > .form-wrapper > .notification-section {
-    display: none;
-    padding-bottom: 10px;
-}
-@media screen and (max-width:600px) {
-    .isso-postbox > .form-wrapper > .auth-section .input-wrapper {
-        display: block;
-        max-width: 100%;
-        margin: 0 0 .3em;
-    }
-    .isso-postbox > .form-wrapper > .auth-section .input-wrapper input {
-        width: 100%;
-    }
 }
