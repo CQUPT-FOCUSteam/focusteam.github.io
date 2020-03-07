@@ -30,11 +30,12 @@ navbar:
         主页: /
         LearningYard学苑: /categories/xy
         LightHouse驿站: /categories/yz
-        ExpressSimulation递仿: /categories/df
+        ExpressSimula递仿: /categories/df
         EasyEdu易尚学: /categories/ysx
         KeyIntell钥慧咨询: /categories/yhzx
-        BookShare书享: /categories/sx
+        PostBook驿书: /categories/ys
         Agorin农订: /categories/nd
+        TechArea技术区: /categories/jsq
         关于: /about
     # Navigation bar links to be shown on the right
     links:

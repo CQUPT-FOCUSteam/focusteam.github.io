@@ -72,11 +72,12 @@ default_category: uncategorized
 category_map:
   LearningYard学苑: xy
   LightHouse驿站: yz
-  ExpressSimulation递仿: df
+  ExpressSimula递仿: df
   EasyEdu易尚学: ysx
   KeyIntell钥慧咨询: yhzx
-  BookShare书享: sx
+  PostBook驿书: ys
   Agorin农订: nd
+  TechArea技术区: jsq
 tag_map:
 
 # Metadata elements
