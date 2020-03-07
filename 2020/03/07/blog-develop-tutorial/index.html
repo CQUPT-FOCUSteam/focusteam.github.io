@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>LearningYard 博客网站开发机迁移及文章发布教程 - FOCUS team</title>
+
+
+    <meta name="description" content="本篇教程将详细介绍 LearningYard 博客网站开发机的迁移流程(从 0 开始)，以及编写和发布文章的相关须知。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LearningYard 博客网站开发机迁移及文章发布教程">
+<meta property="og:url" content="https://www.focusteam.vip/2020/03/07/blog-develop-tutorial/index.html">
+<meta property="og:site_name" content="FOCUS team">
+<meta property="og:description" content="本篇教程将详细介绍 LearningYard 博客网站开发机的迁移流程(从 0 开始)，以及编写和发布文章的相关须知。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/usbse.png!thumbnail">
+<meta property="article:published_time" content="2020-03-07T05:02:10.000Z">
+<meta property="article:modified_time" content="2020-03-07T06:36:31.046Z">
+<meta property="article:author" content="FOCUS team">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/usbse.png!thumbnail">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143604803-3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143604803-3');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="FOCUS team" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="LearningYard 博客网站开发机迁移及文章发布教程" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/categories/xy">LearningYard学苑</a>
+                
+                <a class="navbar-item"
+                href="/categories/yz">LightHouse驿站</a>
+                
+                <a class="navbar-item"
+                href="/categories/df">ExpressSimulation递仿</a>
+                
+                <a class="navbar-item"
+                href="/categories/ysx">EasyEdu易尚学</a>
+                
+                <a class="navbar-item"
+                href="/categories/yhzx">KeyIntell钥慧咨询</a>
+                
+                <a class="navbar-item"
+                href="/categories/sx">BookShare书享</a>
+                
+                <a class="navbar-item"
+                href="/categories/nd">Agorin农订</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/usbse.png!thumbnail" alt="LearningYard 博客网站开发机迁移及文章发布教程">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right">&nbsp;</i>LearningYard 博客网站开发机迁移及文章发布教程
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-07T05:02:10.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-03-07</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-03-07T06:36:31.046Z"><i class="fas fa-edit">&nbsp;</i>2020-03-07</time>
+                
+                
+                <i class="far fa-folder-open has-text-grey">&nbsp;</i>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tutorials/">tutorials</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock">&nbsp;</i>
+                    
+                    
+                    18 分钟 读完 (大约 2740 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>本篇教程将详细介绍 LearningYard 博客网站开发机的迁移流程(从 0 开始)，以及编写和发布文章的相关须知。</p>
+<a id="more"></a>
+
+
+
+<h2 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>主页地址：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<p>双击根据指引猛点下一步安装</p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>使用系统自带的包管理工具进行安装(如果速度太慢可以加代理或更换国内镜像源)</p>
+<p>执行命令(<strong>Ubuntu</strong>)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install -y git</span><br></pre></td></tr></table></figure>
+
+<p>执行命令(<strong>CentOS</strong>)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y update &amp;&amp; sudo yum install -y git</span><br></pre></td></tr></table></figure>
+
+<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><p>使用 home-brew 包管理工具安装</p>
+<p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update &amp;&amp; brew install git</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装-Node-js-和-npm"><a href="#安装-Node-js-和-npm" class="headerlink" title="安装 Node.js 和 npm"></a>安装 Node.js 和 npm</h2><h3 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h3><p>下载地址：<a href="https://nodejs.org/dist/v12.15.0/node-v12.15.0-x86.msi">https://nodejs.org/dist/v12.15.0/node-v12.15.0-x86.msi</a></p>
+<p>双击根据指引猛点下一步安装</p>
+<h3 id="Linux-二选一，推荐方法2"><a href="#Linux-二选一，推荐方法2" class="headerlink" title="Linux(二选一，推荐方法2)"></a>Linux(二选一，推荐方法2)</h3><ol>
+<li>通过源码编译安装</li>
+</ol>
+<p>下载地址：<a href="https://nodejs.org/dist/v12.15.0/node-v12.15.0.tar.gz">https://nodejs.org/dist/v12.15.0/node-v12.15.0.tar.gz</a></p>
+<p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/nodejs &amp;&amp; <span class="built_in">cd</span> ~/Downloads/ &amp;&amp; wget https://nodejs.org/dist/v12.15.0/node-v12.15.0.tar.gz &amp;&amp; tar -zxvf node-v12.15.0.tar.gz &amp;&amp; <span class="built_in">cd</span> node-v12.15.0 &amp;&amp; ./configure --prefix=/usr/<span class="built_in">local</span>/nodejs/ &amp;&amp; sudo make &amp;&amp; sudo make install &amp;&amp; <span class="built_in">cd</span> .. &amp;&amp; rm -rf node-v12.15.0.tar.gz &amp;&amp; rm -rf node-v12.15.0</span><br></pre></td></tr></table></figure>
+
+<p>设置环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export NODE_HOME=/usr/local/nodejs/bin'</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'export PATH=$NODE_HOME:$PATH'</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>直接安装编译好的二进制包</li>
+</ol>
+<p>下载地址：<a href="https://nodejs.org/dist/v12.15.0/node-v12.15.0-linux-x64.tar.xz">https://nodejs.org/dist/v12.15.0/node-v12.15.0-linux-x64.tar.xz</a></p>
+<p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads/ &amp;&amp; wget https://nodejs.org/dist/v12.15.0/node-v12.15.0-linux-x64.tar.xz &amp;&amp; sudo tar xvJf node-v12.15.0-linux-x64.tar.xz -C /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
+
+<p>设置环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export NODE_HOME=/usr/local/node-v12.15.0-linux-x64/bin'</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'export PATH=$NODE_HOME:$PATH'</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>删除压缩包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/Downloads/node-v12.15.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Mac-1"><a href="#Mac-1" class="headerlink" title="Mac"></a>Mac</h3><p>下载地址：<a href="https://nodejs.org/dist/v12.15.0/node-v12.15.0.pkg">https://nodejs.org/dist/v12.15.0/node-v12.15.0.pkg</a></p>
+<p>双击根据指引安装</p>
+<h2 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h2><p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>Linux 和 Mac 用户如遇到权限问题请额外执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R $(whoami) $(npm config get prefix)/&#123;lib/node_modules,bin,share&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="设置-git-全局信息"><a href="#设置-git-全局信息" class="headerlink" title="设置 git 全局信息"></a>设置 git 全局信息</h2><p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"填你的 github 名字(带上两端的双引号)"</span></span><br><span class="line">git config --global user.email <span class="string">"填你的 github 关联邮箱(带上了两端的双引号)"</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="设置-git-的-ssh-认证公钥"><a href="#设置-git-的-ssh-认证公钥" class="headerlink" title="设置 git 的 ssh 认证公钥"></a>设置 git 的 ssh 认证公钥</h2><p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"填你的 github 关联邮箱(带上了两端的双引号)"</span></span><br></pre></td></tr></table></figure>
+
+<p>什么都不需要输入，一路回车到命令执行结束，接着：</p>
+<p>Linux 和 Mac 用户请执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>Windows 用户请到如图所示的红框内的地址中寻找 id_rsa.pub 文件并用记事本打开：</p>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/e876i.png!origin" alt="windows 下生成 ssh key"></p>
+<p>将打印的值完整的复制，以 <code>ssh-rsa</code> 开头，以 <code>你输入的邮箱</code> 结尾，全部完整的复制，打开你的 <code>github 主页</code> ，点击右上角头像，选择 <code>Settings</code> 选项，如图：</p>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/07xi1.png!origin" alt="选择 &quot;Settings&quot; 选项"></p>
+<p>进入到用户设置界面后，点击左侧红框内的 <code>SSH and GPG keys</code> 按钮，进入到右侧 <code>SSH keys</code> 编辑界面，如下图所示：</p>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/r30k6.png!origin" alt="选择 &quot;SSH and GPG keys&quot; 选项"></p>
+<p>点击上图中右上角蓝色框内的 <code>New SSH key</code> 按钮，进入到新增 ssh key 的界面，如下图所示：</p>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/bhwvj.png!origin" alt="新增 ssh key"><br>在 <code>Title</code> 单行文本框内<strong>随意输入一个字符串</strong>，最好用于标示你的计算机，接着，在下方 <code>Key</code> 多行文本框内填写刚才复制的 <code>id_rsa.pub</code> 文件的内容，最后点击下方的 <code>Add SSH key</code> 按钮完成公钥的添加。</p>
+<p>执行命令以验证配置结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>如果出现下图所示的输出，则表示配置成功：</p>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/z3c9q.png!origin" alt="验证 ssh key 配置"></p>
+<h2 id="向-LearningYard-learningyard-github-io-仓库管理员申请开放合作权限"><a href="#向-LearningYard-learningyard-github-io-仓库管理员申请开放合作权限" class="headerlink" title="向 LearningYard/learningyard.github.io 仓库管理员申请开放合作权限"></a>向 LearningYard/learningyard.github.io 仓库管理员申请开放合作权限</h2><p>需要向 LearningYard 仓库管理员提供自己的 <strong>GitHub账号名称</strong> ，仓库管理员操作如下所示：</p>
+<ol>
+<li>登陆管理员的 GitHub 账号；</li>
+<li>进入该仓库主页，链接：<a href="https://github.com/LearningYard/learningyard.github.io">https://github.com/LearningYard/learningyard.github.io</a>；</li>
+<li>在页面中部找到如下图所示的部分，点击红色框内的 <code>Settings</code> 按钮：</li>
+</ol>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/mul0i.png!origin" alt="仓库设置按钮"></p>
+<ol start="4">
+<li>进入仓库设置部分后，点击左边列表的 <code>Manage access</code> 选项，进入管理权限设置界面，如下图所示：</li>
+</ol>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/2m4ki.png!origin" alt="管理权限设置界面"></p>
+<ol start="5">
+<li>点击上图右侧红框内的 <code>Invite a collaborator</code> 按钮，输入本节开头别人提供的 GitHub 账号进行搜索，确认后添加，如下图所示：</li>
+</ol>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/tilfw.png!origin" alt="添加合作者"></p>
+<ol start="6">
+<li>被邀请者需要去自己 GitHub 绑定的邮箱内查收一封<strong>带有邀请链接</strong>的邮件，并点击链接进行确认，完成合作者的添加，至此便有权限通过自己的 GitHub 账号为 LearningYard 项目提交代码。</li>
+</ol>
+<h2 id="在一台新计算机上复建-LearningYard-博客网站开发环境和配置"><a href="#在一台新计算机上复建-LearningYard-博客网站开发环境和配置" class="headerlink" title="在一台新计算机上复建 LearningYard 博客网站开发环境和配置"></a>在一台新计算机上复建 LearningYard 博客网站开发环境和配置</h2><ol>
+<li>将 LearningYard/learningyard.github.io 仓库克隆到本地：</li>
+</ol>
+<p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:LearningYard/learningyard.github.io.git -b dev &amp;&amp; <span class="built_in">cd</span> learningyard.github.io</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用 hexo 生成静态文件：</li>
+</ol>
+<p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>使用 hexo 自带服务器模块预览：</li>
+</ol>
+<p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>hexo 将会在本地启动，并监听默认的 <code>4000</code> 端口，如下图所示：</p>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/jqrq5.png!origin" alt="启动 hexo 服务器"></p>
+<ol start="4">
+<li>打开浏览器，访问地址 <code>http://localhost:4000</code> 将会看到和 <code>https://www.learningyard.xyz</code> 网站一样的内容；</li>
+<li>若一切看起来正常，则回到命令行界面，按下 <code>Ctrl + C</code> 组合键可以停止 hexo 服务器，这也意味着开发环境的复建顺利完成。</li>
+</ol>
+<h2 id="添加新文章并上传"><a href="#添加新文章并上传" class="headerlink" title="添加新文章并上传"></a>添加新文章并上传</h2><ol>
+<li>进入到本地我们克隆的开发目录 <code>learningyard.github.io</code> 下；</li>
+<li>执行命令：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"你要新建的文章的文件名，即 .md 文件的文件名，最好是英文，例如 tutorial，不需要 .md 后缀"</span></span><br></pre></td></tr></table></figure>
+
+<p>该命令会在 <code>learningyard.github.io/source/_post/</code> 路径下生成同名的 markdown 文件，例如本文是这样生成的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"tutorial"</span></span><br></pre></td></tr></table></figure>
+
+<p>进入到 <code>learningyard.github.io/source/_post/</code> 路径下便会发现一个名为 <code>tutorial.md</code> 的 markdown 文件；</p>
+<ol start="3">
+<li>用 markdown 编辑器打开刚才新建的 .md 文件，这里推荐使用 <strong><a href="https://typora.io/">Typora</a></strong> 。会看到新建的文件里包含一定的信息，如下图所示：</li>
+</ol>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/xtacl.png!origin" alt="新建文件内容示例"></p>
+<p>如上图所示，文件顶部是一个 <code>YAML 头</code>，这个头包含了文件的一些基本信息供 hexo 生成静态文件时使用，这里包含了三个字段，分别是 <code>title</code> 、<code>date</code> 、<code>tags</code> 。</p>
+<p>首先我们需要将 title 字段的内容改为我们文章真正的标题；</p>
+<p>其次，date 字段表示的是文章生成的时间，这个改不改都无所谓，但 hexo 会按照此时间将所有文章排序生成归档，如果没有特殊需求的话一般不做改动；</p>
+<p>接着，为了方便读者对文章进行查找，我们需要给文章<strong>归类</strong>以及<strong>添加标签</strong>，这就需要添加和修改 <code>categories</code> 和 <code>tags</code> 两个字段了，既然是字段名是复数，那单个字段肯定可以有多个值，这里需要注意：</p>
+<p>​        1⃣️ <strong>如果单个字段要填入多个值，那么这些值需要用一对方括号 <code>[]</code> 包裹，不同值之间通过英文逗号 <code>,</code> 间隔</strong>，如 categories: [tutorials,test]；</p>
+<p>​        2⃣️ <strong>如果为 categories 字段添加多个值，那么这些值将按顺序逐级下沉，后一个值会成为前一个值的子分类</strong>，如下图所示：</p>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/8zqhi.png!origin" alt="子分类示例"></p>
+<p>​        3⃣️ <strong>如果为 tags 字段添加多个值，那么这些值是同级的</strong>，如下图所示：</p>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/bt66v.png!origin" alt="多标签示例"></p>
+<p>最后，为了美观，我们可能会想给文章加个封面图，这里就需要用到 <code>thumbnail</code> 这个字段了，在该字段中填入需要作为封面的图的地址便可以了。</p>
+<p>本文的 YAML 头如下图所示，以供参考：</p>
+<p><img src="https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/d73uq.png!origin" alt="本文的 YAML 头"></p>
+<ol start="4">
+<li>头写完了，下面就该写文章主体部分了，这里就不详细介绍了，请参考 markdown 语法。</li>
+<li>在写完了文章后，我们希望能在博客中预览整体效果，同样的，请回到本地 learningyard.github.io 这个目录下，执行命令：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>以将 markdown 文件转变成静态的 html 文件，接着，执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>启动 hexo 自带的服务器模块，在浏览器中预览。</p>
+<ol start="6">
+<li>在本地预览感觉满意后，我们希望能将文章发布到真正的博客服务器上，供更多的人阅读，这里就需要执行命令：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>hexo 将利用 git 工具将生成的静态 html 文件和相关资源同步到远端的 GitHub 仓库中，也就是 LearningYard/learningyard.github.io 仓库中，GitHub Page 将根据仓库内容的改变自动更新，稍等几分钟便可以通过访问域名 <code>https://www.learningyard.xyz</code> 的方式正式访问到更新的文章资源了。</p>
+<ol start="7">
+<li>同步完了静态资源，别忘了把刚刚辛苦编写的 markdown 源文件也同步到仓库中，便于下次复建开发环境，这里我已经在仓库中新建了一个 <code>dev</code> 分支，用于存放开发资源，而生成的静态资源会默认提交到仓库的 <code>master</code> 分支。静态资源的同步交给 <code>hexo d</code> 命令来做，源文件的同步则需要执行下面的命令：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"这里简单描述一下做了哪些更新，比如：新增了 xxx.md 文件"</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>这样，便完成了源文件和开发环境的同步。</p>
+<p><strong>以上。</strong></p>
+
+        </div>
+        
+            <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://www.focusteam.vip">FOCUS team</a></li>
+            <li><strong>本文链接：</strong><a href="https://www.focusteam.vip/2020/03/07/blog-develop-tutorial/">https://www.focusteam.vip/2020/03/07/blog-develop-tutorial/</a></li>
+            <li><strong>版权声明：</strong>本网站所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明出处！
+            </li>
+            </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/hexo/" rel="tag">hexo</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5e58774a589bc90012234cf2&amp;product=inline-share-buttons&amp;cms=sop' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.png" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/28/BookShare%E4%B9%A6%E4%BA%AB-%E5%88%86%E7%B1%BB%E6%96%87%E7%AB%A0%E7%A4%BA%E4%BE%8B/">
+                <span class="level-item">BookShare书享 - 分类文章示例</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<link rel="stylesheet" href="/css/isso.css">
+<script data-isso="//base-service.site/isso"
+    data-isso-css="false"
+    data-isso-lang="zh"
+    data-isso-reply-to-self="true"
+    data-isso-require-author="true"
+    data-isso-reply-notifications="true"
+    src="//base-service.site/isso/js/embed.min.js">
+</script>
+<section id="isso-thread" data-title="LearningYard 博客网站开发机迁移及文章发布教程"></section>
+
+
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="FOCUS team">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        FOCUS team
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        CQUPT
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国，重庆</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            1
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/learningyard" target="_blank" rel="noopener">
+                <i class="fab fa-github">&nbsp;&nbsp;</i>
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Wechat" href="/images/gzh.jpg">
+                
+                <i class="fab fa-weixin"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Email" href="mailto:chinazhangnian@163.com">
+                
+                <i class="fas fa-envelope"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Rss" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#安装-git">
+        <span class="has-mr-6">1</span>
+        <span>安装 git</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Windows">
+        <span class="has-mr-6">1.1</span>
+        <span>Windows</span>
+        </a></li><li>
+        <a class="is-flex" href="#Linux">
+        <span class="has-mr-6">1.2</span>
+        <span>Linux</span>
+        </a></li><li>
+        <a class="is-flex" href="#Mac">
+        <span class="has-mr-6">1.3</span>
+        <span>Mac</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#安装-Node-js-和-npm">
+        <span class="has-mr-6">2</span>
+        <span>安装 Node.js 和 npm</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Windows-1">
+        <span class="has-mr-6">2.1</span>
+        <span>Windows</span>
+        </a></li><li>
+        <a class="is-flex" href="#Linux-二选一，推荐方法2">
+        <span class="has-mr-6">2.2</span>
+        <span>Linux(二选一，推荐方法2)</span>
+        </a></li><li>
+        <a class="is-flex" href="#Mac-1">
+        <span class="has-mr-6">2.3</span>
+        <span>Mac</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#安装-hexo">
+        <span class="has-mr-6">3</span>
+        <span>安装 hexo</span>
+        </a></li><li>
+        <a class="is-flex" href="#设置-git-全局信息">
+        <span class="has-mr-6">4</span>
+        <span>设置 git 全局信息</span>
+        </a></li><li>
+        <a class="is-flex" href="#设置-git-的-ssh-认证公钥">
+        <span class="has-mr-6">5</span>
+        <span>设置 git 的 ssh 认证公钥</span>
+        </a></li><li>
+        <a class="is-flex" href="#向-LearningYard-learningyard-github-io-仓库管理员申请开放合作权限">
+        <span class="has-mr-6">6</span>
+        <span>向 LearningYard/learningyard.github.io 仓库管理员申请开放合作权限</span>
+        </a></li><li>
+        <a class="is-flex" href="#在一台新计算机上复建-LearningYard-博客网站开发环境和配置">
+        <span class="has-mr-6">7</span>
+        <span>在一台新计算机上复建 LearningYard 博客网站开发环境和配置</span>
+        </a></li><li>
+        <a class="is-flex" href="#添加新文章并上传">
+        <span class="has-mr-6">8</span>
+        <span>添加新文章并上传</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="LearningYard 博客网站开发机迁移及文章发布教程" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 FOCUS team&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="CC BY-NC-ND 4.0" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                        
+                        <i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<i class="fab fa-creative-commons-nc"></i>&nbsp;<i class="fab fa-creative-commons-nd"></i>&nbsp;
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>&nbsp;
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://www.focusteam.vip',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
