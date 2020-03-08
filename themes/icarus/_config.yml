@@ -147,7 +147,7 @@ widgets:
         # Whether to show avatar image rounded or square
         avatar_rounded: false
         # Path or URL for the follow button
-        follow_link: 'https://github.com/learningyard'
+        follow_link: 'https://github.com/cqupt-focusteam'
         # Links to be shown on the bottom of the profile widget
         social_links:
             Wechat:
@@ -155,7 +155,7 @@ widgets:
                 url: /images/gzh.jpg
             Email:
                 icon: fas fa-envelope
-                url: 'mailto:chinazhangnian@163.com'
+                url: 'mailto:cqupt_focusteam@outlook.com'
             Rss:
                 icon: fas fa-rss
                 url: /atom.xml
@@ -171,7 +171,7 @@ widgets:
         position: left
         # Links to be shown in the links widget
         links:
-            LearningYard: 'https://github.com/learningyard'
+            FOCUSteam: 'https://github.com/cqupt-focusteam'
     -
         # Widget name
         type: category
