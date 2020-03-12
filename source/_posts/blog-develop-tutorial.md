@@ -3,7 +3,7 @@ title: 博客网站开发机迁移及文章发布教程 - 以 LearningYard 为�
 date: 2020-03-07 13:02:10
 categories: TechArea技术区
 tags: [hexo]
-thumbnail: https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/5sjvk.png!thumbnail
+thumbnail: https://focusteam-blog-pic.oss-cn-shenzhen.aliyuncs.com/ivrgs.png!thumbnail
 ---
 
 本篇教程将详细介绍 LearningYard 博客网站开发机的迁移流程(从 0 开始)，以及编写和发布文章的相关须知。
